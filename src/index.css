@@ -9,3 +9,8 @@
   background: "#000";
   border-radius: 10px;
 }
+
+body {
+  height: 100vh;
+  overflow-y: auto;
+}
