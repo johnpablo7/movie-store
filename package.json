@@ -9,7 +9,10 @@
     "preview": "vite preview --host"
   },
   "dependencies": {
+    "@fontsource/dosis": "^4.5.11",
+    "@fontsource/red-hat-display": "^4.5.12",
     "clsx": "^1.2.1",
+    "dotenv": "^16.0.3",
     "jotai": "^2.0.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

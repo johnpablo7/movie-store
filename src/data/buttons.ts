@@ -1,17 +1,17 @@
 export const buttons = [
   {
     id: "1",
-    path: "/discover",
-    name: "Discover",
+    path: "/series",
+    name: "Series",
   },
   {
     id: "2",
-    path: "/browse",
-    name: "Browse",
+    path: "/peliculas",
+    name: "Películas",
   },
   {
     id: "3",
-    path: "/wishlist",
-    name: "Wishlist",
+    path: "/categorias",
+    name: "Categorías",
   },
 ];

@@ -1,3 +1,3 @@
-export const Browse = () => {
+export const Series = () => {
   return <div>Browse</div>;
 };

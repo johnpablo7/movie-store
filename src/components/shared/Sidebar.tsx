@@ -21,7 +21,7 @@ export const Sidebar = () => {
         `bg-woodsmoke fixed top-0 w-64 h-full flex flex-col border-r border-[#38383A] px-4 py-7 md:py-8 2xl:py-10 transition-all z-50`,
         showMobileMenu ? "left-0" : "-left-full",
         // Destok
-        `lg:left-0`
+        `lg:left-0 md:hidden`
       )}
     >
       <div className="flex items-center justify-center mb-6 md:mb-8">

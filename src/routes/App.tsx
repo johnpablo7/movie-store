@@ -11,9 +11,9 @@ import { Downloads } from "../components/pages/store/Downloads";
 import { Settings } from "../components/pages/store/Settings";
 import { Perfil } from "../components/pages/store/Perfil";
 /* Header */
-import { Discover } from "../components/pages/header/Discover";
-import { Browse } from "../components/pages/header/Browse";
-import { Wishlist } from "../components/pages/header/Wishlist";
+import { Movies } from "../components/pages/header/Movies";
+import { Series } from "../components/pages/header/Series";
+import { Categories } from "../components/pages/header/Categories";
 
 export const App = () => {
   return (
@@ -30,9 +30,9 @@ export const App = () => {
           <Route path="/settings" element={<Settings />} />
           <Route path="/perfil" element={<Perfil />} />
           {/* Header */}
-          <Route path="/discover" element={<Discover />} />
-          <Route path="/browse" element={<Browse />} />
-          <Route path="/wishlist" element={<Wishlist />} />
+          <Route path="/movies" element={<Movies />} />
+          <Route path="/series" element={<Series />} />
+          <Route path="/categories" element={<Categories />} />
 
           <Route path="*" element={<NotFound />} />
         </Route>
