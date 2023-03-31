@@ -1,5 +1,7 @@
 import { RiPlayFill } from "react-icons/ri";
-import { Slide } from "./Slide";
+import { Categories } from "./Categories";
+import { Releases } from "./Releases";
+import { Trending } from "./Trending";
 
 export const Main = () => {
   return (
@@ -20,7 +22,9 @@ export const Main = () => {
         </div>
       </div>
 
-      <Slide />
+      <Trending />
+      <Releases />
+      <Categories />
     </main>
   );
 };
