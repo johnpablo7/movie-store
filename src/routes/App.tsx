@@ -11,17 +11,21 @@ import { Downloads } from "../components/pages/store/Downloads";
 import { Settings } from "../components/pages/store/Settings";
 import { Perfil } from "../components/pages/store/Perfil";
 /* Header */
-import { Movies } from "../components/pages/header/Movies";
-import { Series } from "../components/pages/header/Series";
-import { Categories } from "../components/pages/header/Categories";
+import { MoviesList } from "../components/pages/header/MoviesList";
+import { SeriesList } from "../components/pages/header/SeriesList";
+import { CategoriesList } from "../components/pages/header/CategoriesList";
 
 export const App = () => {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<AuthLayout />}>
-          {/* Store */}
+          {/* Pages */}
           <Route path="" element={<Home />} />
+          <Route path="/movies" element={<MoviesList />} />
+          <Route path="/categories" element={<CategoriesList />} />
+          <Route path="/series" element={<SeriesList />} />
+          {/* Destok Nav */}
           <Route path="/store" element={<Store />} />
           <Route path="/library" element={<Library />} />
           <Route path="/friends" element={<Friends />} />
@@ -29,10 +33,6 @@ export const App = () => {
           <Route path="/downloads" element={<Downloads />} />
           <Route path="/settings" element={<Settings />} />
           <Route path="/perfil" element={<Perfil />} />
-          {/* Header */}
-          <Route path="/movies" element={<Movies />} />
-          <Route path="/series" element={<Series />} />
-          <Route path="/categories" element={<Categories />} />
 
           <Route path="*" element={<NotFound />} />
         </Route>

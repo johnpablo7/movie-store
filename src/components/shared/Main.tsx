@@ -1,7 +1,7 @@
 import { RiPlayFill } from "react-icons/ri";
-import { Categories } from "./Categories";
 import { Releases } from "./Releases";
 import { Trending } from "./Trending";
+import { Categories } from "./Categories";
 
 export const Main = () => {
   return (
@@ -13,9 +13,9 @@ export const Main = () => {
             alt="img"
             className="w-full h-full object-cover drop-shadow-2xl"
           />
-          <div className="absolute left-32 bottom-5 max-w-xs md:max-w-md lg:max-w-md 2xl:max-w-xl">
+          <div className="absolute left-32 bottom-4 max-w-xs md:max-w-md lg:max-w-md 2xl:max-w-xl">
             <button className="flex items-center gap-1 lg:gap-3 bg-[#EBEBF5] px-3 py-1 md:py-2 md:px-4 lg:py-4 lg:px-8 rounded-sm text-xs md:text-lg lg:text-lg">
-              <RiPlayFill className="text-xl" />
+              <RiPlayFill className="text-lg" />
               <p className="font-semibold">Reproducir</p>
             </button>
           </div>

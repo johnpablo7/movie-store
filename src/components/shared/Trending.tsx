@@ -17,11 +17,9 @@ export const Trending = () => {
   // console.log(movies);
 
   return (
-    <div className="p-4 drop-shadow-2xl 2xl:py-10">
-      <div className="flex items-center justify-between pb-2 md:px-0 md:mb-5 2xl:mb-8">
-        <div className="text-[#EBEBF5] text-lg md:text-2xl font-semibold">
-          Tendencias
-        </div>
+    <div className="pl-4 pt-2">
+      <div className="flex items-center justify-between pb-2">
+        <h3 className="text-[#EBEBF5] font-bold">Tendencias</h3>
         <div className="items-center hidden md:hidden lg:flex gap-4">
           <LeftArrowIcon className="text-[#EBEBF5] text-opacity-60 hover:text-[#EBEBF5] cursor-pointer fill-current transition-colors" />
           <RightArrowIcon className="text-[#EBEBF5] text-opacity-60 hover:text-[#EBEBF5] cursor-pointer fill-current transition-colors" />
@@ -29,18 +27,16 @@ export const Trending = () => {
       </div>
 
       {/* Tendencias */}
-      <div className="overflow-x-auto">
-        <div className="flex items-center w-auto scrollbar-hide gap-x-2">
-          {movies?.map((movie) => (
-            <NavLink key={movie.id} to="/" className="w-1/3 flex-none">
-              <img
-                src={getImageUrl(300, movie.poster_path)}
-                className="object-cover object-center rounded-sm"
-                alt="img"
-              />
-            </NavLink>
-          ))}
-        </div>
+      <div className="flex overflow-x-auto items-center w-auto scrollbar-hide gap-x-2">
+        {movies?.map((movie) => (
+          <NavLink key={movie.id} to="/" className="w-1/3 flex-none">
+            <img
+              src={getImageUrl(300, movie.poster_path)}
+              className="object-cover object-center rounded-sm w-full h-44"
+              alt="img"
+            />
+          </NavLink>
+        ))}
       </div>
     </div>
   );

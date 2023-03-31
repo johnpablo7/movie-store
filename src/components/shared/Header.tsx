@@ -3,8 +3,9 @@ import { useScroll } from "../../hooks/scroll";
 import { RiSearchLine } from "react-icons/ri";
 import { FaUser } from "react-icons/fa";
 import { GoTriangleDown } from "react-icons/go";
-import { buttons } from "../../data/buttons";
 import clsx from "clsx";
+import { useAtom } from "jotai";
+import { mobileMenuAtom } from "../../atoms/sidebar";
 
 export const Header = () => {
   return (
@@ -39,7 +40,12 @@ const HeaderMain = () => {
 };
 
 const HeaderMenu = () => {
+  const [showMobileMenu, setShowMobileMenu] = useAtom(mobileMenuAtom);
   const { directionY } = useScroll();
+
+  const toggleMenu = () => {
+    setShowMobileMenu(!showMobileMenu);
+  };
 
   return (
     <nav
@@ -49,25 +55,39 @@ const HeaderMenu = () => {
       )}
     >
       <ul className="flex items-center gap-3">
-        {buttons.map((list) => (
-          <li key={list.id}>
-            <NavLink
-              to={list.path}
-              className={({ isActive }) =>
-                clsx(
-                  "py-1 px-4 md:text-lg font-semibold",
-                  isActive ? "text-white" : "text-[#EBEBF5] opacity-60"
-                )
-              }
-            >
-              {list.name}
-            </NavLink>
-          </li>
-        ))}
+        <NavLink
+          to="/series"
+          className={({ isActive }) =>
+            clsx(
+              "py-1 px-4 md:text-lg font-semibold",
+              isActive ? "text-white" : "text-[#EBEBF5] opacity-60"
+            )
+          }
+        >
+          <p>Series</p>
+        </NavLink>
+
+        <NavLink
+          to="/movies"
+          className={({ isActive }) =>
+            clsx(
+              "py-1 px-4 md:text-lg font-semibold",
+              isActive ? "text-white" : "text-[#EBEBF5] opacity-60"
+            )
+          }
+        >
+          <p>Películas</p>
+        </NavLink>
+
+        <button
+          onClick={toggleMenu}
+          className="py-1 px-4 hover:text-white md:text-lg font-semibold flex items-center gap-2 text-[#EBEBF5] text-opacity-60"
+        >
+          <p>Categorías</p>
+          <GoTriangleDown className="text-[#EBEBF5]" />
+          {showMobileMenu}
+        </button>
       </ul>
-      <NavLink to="/">
-        <GoTriangleDown className="text-[#EBEBF5]" />
-      </NavLink>
     </nav>
   );
 };

@@ -1,3 +1,4 @@
+import { Outlet } from "react-router-dom";
 import { Header } from "../components/shared/Header";
 import { Main } from "../components/shared/Main";
 
@@ -6,6 +7,7 @@ export const AuthLayout = () => {
     <div className="bg-woodsmoke w-full min-h-screen">
       <Header />
       <Main />
+      <Outlet />
     </div>
   );
 };
