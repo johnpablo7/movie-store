@@ -1,3 +1,11 @@
+import { Header } from "../../shared/Header";
+import { Main } from "../../shared/Main";
+
 export const Home = () => {
-  return <div>Home</div>;
+  return (
+    <>
+      <Header />
+      <Main />
+    </>
+  );
 };

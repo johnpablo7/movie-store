@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { getTrendingMoviesPreview, getImageUrl } from "../../api/movies";
-import { TMovie } from "../../types/movie";
+import { TTrendingMovie } from "../../types/movie";
 import LeftArrowIcon from "../../Svg/LeftArrowIcon";
 import RightArrowIcon from "../../Svg/RightArrowIcon";
 
 export const Trending = () => {
-  const [movies, setMovies] = useState<TMovie[]>();
+  const [movies, setMovies] = useState<TTrendingMovie[]>();
 
   useEffect(() => {
     getTrendingMoviesPreview().then((movies) => {
@@ -14,7 +14,7 @@ export const Trending = () => {
     });
   }, []);
 
-  // console.log(movies);
+  console.log(movies);
 
   return (
     <div className="pl-4 pt-2">
@@ -29,7 +29,11 @@ export const Trending = () => {
       {/* Tendencias */}
       <div className="flex overflow-x-auto items-center w-auto scrollbar-hide gap-x-2">
         {movies?.map((movie) => (
-          <NavLink key={movie.id} to="/" className="w-1/3 flex-none">
+          <NavLink
+            key={movie.id}
+            to={"/movies/" + movie.id}
+            className="w-1/3 flex-none"
+          >
             <img
               src={getImageUrl(300, movie.poster_path)}
               className="object-cover object-center rounded-sm w-full h-44"

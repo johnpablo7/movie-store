@@ -11,7 +11,7 @@ import { Downloads } from "../components/pages/store/Downloads";
 import { Settings } from "../components/pages/store/Settings";
 import { Perfil } from "../components/pages/store/Perfil";
 /* Header */
-import { MoviesList } from "../components/pages/header/MoviesList";
+import { MoviePreview } from "../components/pages/header/MoviePreview";
 import { SeriesList } from "../components/pages/header/SeriesList";
 import { CategoriesList } from "../components/pages/header/CategoriesList";
 
@@ -22,7 +22,9 @@ export const App = () => {
         <Route path="/" element={<AuthLayout />}>
           {/* Pages */}
           <Route path="" element={<Home />} />
-          <Route path="/movies" element={<MoviesList />} />
+
+          <Route path="/movies/:movieId" element={<MoviePreview />} />
+
           <Route path="/categories" element={<CategoriesList />} />
           <Route path="/series" element={<SeriesList />} />
           {/* Destok Nav */}

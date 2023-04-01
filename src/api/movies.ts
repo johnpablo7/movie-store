@@ -15,14 +15,20 @@ const api = axios.create({
 // ************************************************************************
 import { API_KEY, URL_IMAGE } from "../constants/api";
 // import { API_KEY, URL_API, URL_IMAGE } from "../constants/api"; // Fetch*
-import { TMovie } from "../types/movie";
+import { TMovie, TTrendingMovie } from "../types/movie";
 
 // Trending (Axios)
 export async function getTrendingMoviesPreview() {
   const { data } = await api(`trending/movie/day`);
   // const data = await res.json();
-  const movies = data.results as TMovie[];
+  const movies = data.results as TTrendingMovie[];
   return movies;
+}
+
+export async function getMovieById(id: string) {
+  const { data } = await api(`/movie/${id}`);
+  const movie = data as TMovie;
+  return movie;
 }
 
 // Trending (Fetch)
