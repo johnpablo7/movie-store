@@ -1,7 +1,7 @@
 import { RiPlayFill } from "react-icons/ri";
 import { Releases } from "./Releases";
 import { Trending } from "./Trending";
-import { Categories } from "./Categories";
+import { CategoryList } from "./CategoryList";
 
 export const Main = () => {
   return (
@@ -16,7 +16,7 @@ export const Main = () => {
           <div className="absolute left-32 bottom-4 max-w-xs md:max-w-md lg:max-w-md 2xl:max-w-xl">
             <button className="flex items-center gap-1 lg:gap-3 bg-[#EBEBF5] px-3 py-1 md:py-2 md:px-4 lg:py-4 lg:px-8 rounded-sm text-xs md:text-lg lg:text-lg">
               <RiPlayFill className="text-lg" />
-              <p className="font-semibold">Reproducir</p>
+              <p className="font-bold">Reproducir</p>
             </button>
           </div>
         </div>
@@ -24,7 +24,7 @@ export const Main = () => {
 
       <Trending />
       <Releases />
-      <Categories />
+      <CategoryList />
     </main>
   );
 };

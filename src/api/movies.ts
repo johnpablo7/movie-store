@@ -19,16 +19,26 @@ import { TMovie, TTrendingMovie } from "../types/movie";
 
 // Trending (Axios)
 export async function getTrendingMoviesPreview() {
-  const { data } = await api(`trending/movie/day`);
+  const { data } = await api("trending/movie/day");
   // const data = await res.json();
   const movies = data.results as TTrendingMovie[];
   return movies;
 }
 
 export async function getMovieById(id: string) {
-  const { data } = await api(`/movie/${id}`);
+  const { data } = await api(`movie/${id}`);
   const movie = data as TMovie;
   return movie;
+}
+
+export async function getMovieByCategory(id: string) {
+  const { data } = await api("discover/movie", {
+    params: {
+      with_genres: id,
+    },
+  });
+  const category = data.results as TTrendingMovie[];
+  return category;
 }
 
 // Trending (Fetch)

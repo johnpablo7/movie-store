@@ -13,7 +13,7 @@ import { Perfil } from "../components/pages/store/Perfil";
 /* Header */
 import { MoviePreview } from "../components/pages/header/MoviePreview";
 import { SeriesList } from "../components/pages/header/SeriesList";
-import { CategoriesList } from "../components/pages/header/CategoriesList";
+import { Category } from "../components/pages/header/Category";
 
 export const App = () => {
   return (
@@ -24,8 +24,7 @@ export const App = () => {
           <Route path="" element={<Home />} />
 
           <Route path="/movies/:movieId" element={<MoviePreview />} />
-
-          <Route path="/categories" element={<CategoriesList />} />
+          <Route path="/category/:categoryId" element={<Category />} />
           <Route path="/series" element={<SeriesList />} />
           {/* Destok Nav */}
           <Route path="/store" element={<Store />} />
