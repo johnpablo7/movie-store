@@ -41,6 +41,16 @@ export async function getMovieByCategory(id: string) {
   return category;
 }
 
+export async function getMovieBySearch(query: string) {
+  const { data } = await api("search/movie", {
+    params: {
+      query,
+    },
+  });
+  const search = data.results as TTrendingMovie[];
+  return search;
+}
+
 // Trending (Fetch)
 // export async function getTrendingMoviesPreview() {
 //   const res = await fetch(`${URL_API}/3/trending/movie/day?api_key=${API_KEY}`);
