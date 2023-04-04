@@ -72,14 +72,14 @@ const HeaderMenu = () => {
             )
           }
         >
-          <p>Películas</p>
+          <p>Movies</p>
         </NavLink>
 
         <button
           onClick={toggleMenu}
           className="py-1 px-4 hover:text-white md:text-lg font-semibold flex items-center gap-2 text-[#EBEBF5] text-opacity-60"
         >
-          <p>Categorías</p>
+          <p>Categories</p>
           <GoTriangleDown className="text-[#EBEBF5]" />
           {showMobileMenu}
         </button>

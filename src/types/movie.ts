@@ -56,7 +56,7 @@ export interface SpokenLanguage {
   name: string;
 }
 
-// Esta interface se usa en Trending.tsx
+// Esta interface se usa en Trending
 export interface TMovieSmall {
   adult: boolean;
   backdrop_path: string;

@@ -3,7 +3,8 @@ import { AuthLayout } from "../layouts/AuthLayout";
 /* Views */
 import { Home } from "../components/pages/views/Home";
 import { Search } from "../components/pages/views/Search";
-import { SeriesList } from "../components/pages/views/SeriesList";
+import { TvShows } from "../components/pages/views/TvShows";
+import { TvShowsPreview } from "../components/pages/views/TvShowsPreview";
 import { Movies } from "../components/pages/views/Movies";
 import { MoviePreview } from "../components/pages/views/MoviePreview";
 import { Category } from "../components/pages/views/Category";
@@ -21,9 +22,13 @@ export const App = () => {
           {/* Views */}
           <Route path="" element={<Home />} />
           <Route path="/search" element={<Search />} />
-          <Route path="/series" element={<SeriesList />} />
+
+          <Route path="/series" element={<TvShows />} />
+          <Route path="/series/:serieId" element={<TvShowsPreview />} />
+
           <Route path="/movies" element={<Movies />} />
           <Route path="/movies/:movieId" element={<MoviePreview />} />
+
           <Route path="/category/:categoryId" element={<Category />} />
           <Route path="/populate" element={<Populate />} />
           <Route path="/my-list" element={<List />} />

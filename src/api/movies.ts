@@ -1,4 +1,6 @@
-// ***** Como seria con Axios *****
+// import { API_KEY, URL_API, URL_IMAGE } from "../constants/api"; // Fetch*
+import { TMovie, TMovieSmall } from "../types/movie";
+import { API_KEY, URL_IMAGE } from "../constants/api";
 import axios from "axios";
 
 const api = axios.create({
@@ -12,23 +14,35 @@ const api = axios.create({
   },
 });
 
-// ************************************************************************
-import { API_KEY, URL_IMAGE } from "../constants/api";
-// import { API_KEY, URL_API, URL_IMAGE } from "../constants/api"; // Fetch*
-import { TMovie, TMovieSmall } from "../types/movie";
-
-// Trending (Axios)
-export async function getTrendingMoviesPreview() {
-  const { data } = await api("trending/movie/day");
-  // const data = await res.json();
-  const movies = data.results as TMovieSmall[];
-  return movies;
-}
-
+// GET /movie/{movie_id}
 export async function getMovieById(id: string) {
   const { data } = await api(`movie/${id}`);
   const movie = data as TMovie;
   return movie;
+}
+
+export async function getTrendingMoviesAll() {
+  const { data } = await api("trending/all/day");
+  const movies = data.results as TMovieSmall[];
+  return movies;
+}
+
+export async function getTrendingMovies() {
+  const { data } = await api("trending/movie/day");
+  const movies = data.results as TMovieSmall[];
+  return movies;
+}
+
+export async function getRelatedMoviesById(id: string) {
+  const { data } = await api(`movie/${id}/recommendations`);
+  const relatedMovies = data.results as TMovieSmall[];
+  return relatedMovies;
+}
+
+export async function getUpComingMovies() {
+  const { data } = await api("movie/upcoming");
+  const comingMovies = data.results as TMovieSmall[];
+  return comingMovies;
 }
 
 export async function getMovieByCategory(id: string) {
@@ -51,22 +65,15 @@ export async function getMovieBySearch(query: string) {
   return search;
 }
 
-export async function getRelatedMoviesById(id: string) {
-  const { data } = await api(`movie/${id}/recommendations`);
-  const relatedMovies = data.results as TMovieSmall[];
-
-  return relatedMovies;
+// Images
+export function getImageUrl(width: number, path: string) {
+  return URL_IMAGE + "/t/p/w" + width + path;
 }
 
 // Trending (Fetch)
-// export async function getTrendingMoviesPreview() {
+// export async function getTrendingMovies() {
 //   const res = await fetch(`${URL_API}/3/trending/movie/day?api_key=${API_KEY}`);
 //   const data = await res.json();
 //   const movies = data.results as TMovie[];
 //   return movies;
 // }
-
-// Images
-export function getImageUrl(width: number, path: string) {
-  return URL_IMAGE + "/t/p/w" + width + path;
-}
