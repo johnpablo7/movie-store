@@ -1,6 +1,6 @@
 import { useAtom } from "jotai";
 import { mobileMenuAtom } from "../../atoms/sidebar";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { TfiClose } from "react-icons/tfi";
 import { useEffect, useState } from "react";
 import { getCategoriesPreview } from "../../api/categories";
@@ -10,16 +10,19 @@ import clsx from "clsx";
 export const CategoryList = () => {
   const [categories, setCategories] = useState<TCategory[]>();
   const [showMobileMenu, setShowMobileMenu] = useAtom(mobileMenuAtom);
+  const location = useLocation();
 
   useEffect(() => {
-    getCategoriesPreview().then((categories) => {
-      setCategories(categories);
-    });
-  }, []);
-  // console.log(categories);
+    setShowMobileMenu(false);
+  }, [location, setShowMobileMenu]);
 
-  const toggleMenu = () => {
-    setShowMobileMenu(!showMobileMenu);
+  useEffect(() => {
+    getCategoriesPreview().then(setCategories);
+  }, []);
+  console.log(categories);
+
+  const closeMenu = () => {
+    setShowMobileMenu(false);
   };
 
   return (
@@ -45,7 +48,7 @@ export const CategoryList = () => {
       {/* Btn menu movil */}
       {showMobileMenu ? (
         <button
-          onClick={toggleMenu}
+          onClick={closeMenu}
           className="bg-white text-black fixed bottom-4 right-40 p-4 text-xl rounded-full z-50"
         >
           <TfiClose />

@@ -17,7 +17,7 @@ export const MoviePreview = () => {
     }
   }, [movieId]);
 
-  console.log(movie);
+  // console.log(movie);
 
   if (!movie) {
     return <p>Cargando...</p>;

@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { getTrendingMoviesPreview, getImageUrl } from "../../api/movies";
-import { TTrendingMovie } from "../../types/movie";
+import { TMovieSmall } from "../../types/movie";
 import LeftArrowIcon from "../../Svg/LeftArrowIcon";
 import RightArrowIcon from "../../Svg/RightArrowIcon";
 
 export const Trending = () => {
-  const [movies, setMovies] = useState<TTrendingMovie[]>();
+  const [movies, setMovies] = useState<TMovieSmall[]>();
 
   useEffect(() => {
     getTrendingMoviesPreview().then((movies) => {

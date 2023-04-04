@@ -18,22 +18,18 @@ export const Header = () => {
 
 const HeaderMain = () => {
   return (
-    <div className="bg-woodsmoke bg-opacity-70 w-full flex items-center justify-center p-2 gap-4">
+    <div className="bg-black bg-opacity-70 w-full flex justify-between py-2 px-4">
       <NavLink to="/">
-        <img src="/images/logo.png" className="w-6 h-6" alt="logo" />
+        <img src="/images/logo.png" className="w-8 h-8" alt="logo" />
       </NavLink>
-      <div>
-        <form className="relative">
-          <RiSearchLine className="absolute text-[#EBEBF5] opacity-60 top-2 lg:top-3 2xl:top-4 left-4 text-lg lg:text-lg" />
-          <input
-            type="text"
-            className="bg-[#202020] outline-none py-1 lg:py-2 2xl:py-3 pl-12 pr-4 rounded-3xl text-[#EBEBF5]"
-            placeholder="Search"
-          />
-        </form>
-      </div>
-      <div>
-        <FaUser className="text-[#EBEBF5] opacity-60 text-xl" />
+      <div className="flex items-center gap-6">
+        <NavLink to="/search">
+          <RiSearchLine className="text-[#EBEBF5] opacity-60 text-2xl" />
+        </NavLink>
+
+        <NavLink to="/user">
+          <FaUser className="text-[#EBEBF5] opacity-60 text-2xl" />
+        </NavLink>
       </div>
     </div>
   );
@@ -50,7 +46,7 @@ const HeaderMenu = () => {
   return (
     <nav
       className={clsx(
-        "bg-woodsmoke bg-opacity-60 w-full flex items-center justify-center p-1 transition",
+        "bg-black bg-opacity-70 w-full flex items-center justify-center pt-1 pb-2 transition",
         directionY === "bottom" ? "opacity-0" : "opacity-80"
       )}
     >

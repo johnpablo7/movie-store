@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { AuthLayout } from "../layouts/AuthLayout";
 /* Store */
-import { Home } from "../components/pages/store/Home";
+import { Home } from "../components/pages/header/Home";
 import { Store } from "../components/pages/store/Store";
 import { Library } from "../components/pages/store/Library";
 import { Friends } from "../components/pages/store/Friends";
@@ -14,6 +14,7 @@ import { Perfil } from "../components/pages/store/Perfil";
 import { MoviePreview } from "../components/pages/header/MoviePreview";
 import { SeriesList } from "../components/pages/header/SeriesList";
 import { Category } from "../components/pages/header/Category";
+import { Search } from "../components/pages/header/Search";
 
 export const App = () => {
   return (
@@ -25,6 +26,7 @@ export const App = () => {
 
           <Route path="/movies/:movieId" element={<MoviePreview />} />
           <Route path="/category/:categoryId" element={<Category />} />
+          <Route path="/search" element={<Search />} />
           <Route path="/series" element={<SeriesList />} />
           {/* Destok Nav */}
           <Route path="/store" element={<Store />} />
