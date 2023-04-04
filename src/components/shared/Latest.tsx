@@ -1,4 +1,4 @@
-export const Releases = () => {
+export const Latest = () => {
   return (
     <div className="pl-4">
       <div className="flex flex-col">

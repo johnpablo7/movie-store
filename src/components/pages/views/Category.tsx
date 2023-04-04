@@ -7,8 +7,8 @@ import { TCategory } from "../../../types/category";
 import { getCategoriesPreview } from "../../../api/categories";
 
 export const Category = () => {
-  const [category, setCategory] = useState<TCategory>();
   const [movies, setMovies] = useState<TMovieSmall[]>();
+  const [category, setCategory] = useState<TCategory>();
 
   const { categoryId } = useParams();
 

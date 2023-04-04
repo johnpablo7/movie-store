@@ -19,7 +19,7 @@ export const CategoryList = () => {
   useEffect(() => {
     getCategoriesPreview().then(setCategories);
   }, []);
-  console.log(categories);
+  // console.log(categories);
 
   const closeMenu = () => {
     setShowMobileMenu(false);

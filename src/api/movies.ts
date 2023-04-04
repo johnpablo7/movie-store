@@ -51,6 +51,13 @@ export async function getMovieBySearch(query: string) {
   return search;
 }
 
+export async function getRelatedMoviesById(id: string) {
+  const { data } = await api(`movie/${id}/recommendations`);
+  const relatedMovies = data.results as TMovieSmall[];
+
+  return relatedMovies;
+}
+
 // Trending (Fetch)
 // export async function getTrendingMoviesPreview() {
 //   const res = await fetch(`${URL_API}/3/trending/movie/day?api_key=${API_KEY}`);

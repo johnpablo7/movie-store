@@ -14,7 +14,7 @@ export const Trending = () => {
     });
   }, []);
 
-  console.log(movies);
+  // console.log(movies);
 
   return (
     <div className="pl-4 pt-2">

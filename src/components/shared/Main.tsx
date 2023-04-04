@@ -1,6 +1,6 @@
 import { RiPlayFill } from "react-icons/ri";
-import { Releases } from "./Releases";
 import { Trending } from "./Trending";
+import { Latest } from "./Latest";
 import { CategoryList } from "./CategoryList";
 
 export const Main = () => {
@@ -23,7 +23,7 @@ export const Main = () => {
       </div>
 
       <Trending />
-      <Releases />
+      <Latest />
       <CategoryList />
     </main>
   );
