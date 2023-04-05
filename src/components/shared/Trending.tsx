@@ -15,7 +15,7 @@ export const Trending = () => {
   // console.log(movies);
 
   return (
-    <div className="pl-4 pt-2">
+    <div className="pl-4 pt-4">
       <div className="flex items-center justify-between mb-2">
         {/* API trending */}
         <h3 className="text-[#EBEBF5] font-bold">Trending</h3>

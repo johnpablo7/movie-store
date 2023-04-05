@@ -6,7 +6,7 @@ import { getImageUrl } from "../../../api/movies";
 import { TTvShow, TTvShowSmall } from "../../../types/tv";
 import { getRelatedTvShowsById, getTvById } from "../../../api/tvs";
 
-export const TvShowsPreview = () => {
+export const TvShowPreview = () => {
   const [serie, setSerie] = useState<TTvShow>();
   const [relatedShows, setRelatedShows] = useState<TTvShowSmall[]>();
   const { serieId } = useParams();

@@ -9,7 +9,6 @@ import { getCategoriesPreview } from "../../../api/categories";
 export const Category = () => {
   const [movies, setMovies] = useState<TMovieSmall[]>();
   const [category, setCategory] = useState<TCategory>();
-
   const { categoryId } = useParams();
 
   useEffect(() => {

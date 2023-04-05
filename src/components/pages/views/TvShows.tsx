@@ -1,7 +1,6 @@
 import { NavLink } from "react-router-dom";
 import { RiArrowLeftLine } from "react-icons/ri";
 import { useState, useEffect } from "react";
-
 import { getImageUrl } from "../../../api/movies";
 import { TTvShowSmall } from "../../../types/tv";
 import { getTrendingTvShows } from "../../../api/tvs";
@@ -13,7 +12,7 @@ export const TvShows = () => {
     getTrendingTvShows().then(setShows);
   }, []);
 
-  console.log(shows);
+  // console.log(shows);
 
   return (
     <div className="flex flex-col w-full min-h-screen bg-gradient-to-r from-gray-900 to-gray-800 p-4">
