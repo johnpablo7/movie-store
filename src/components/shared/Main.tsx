@@ -5,11 +5,14 @@ import { CategoryList } from "./CategoryList";
 import { useEffect, useState } from "react";
 import { getImageUrl, getTrendingMovies } from "../../api/movies";
 import { TMovieSmall } from "../../types/movie";
+import { NavLink } from "react-router-dom";
 
 export const Main = () => {
+  const [movies, setMovies] = useState<TMovieSmall[]>();
   const [movie, setMovie] = useState<TMovieSmall>();
 
   useEffect(() => {
+    getTrendingMovies().then(setMovies);
     getTrendingMovies().then((movies) => {
       const randomIndex = Math.floor(Math.random() * movies.length);
       const movie = movies[randomIndex];
@@ -23,7 +26,7 @@ export const Main = () => {
 
   return (
     <main className="bg-black">
-      <div className="grid grid-cols-1">
+      <div className="md:hidden grid grid-cols-1">
         <div className="relative aspect-[5/7] xl:aspect-[4/3]">
           {movie && (
             <img
@@ -34,6 +37,23 @@ export const Main = () => {
           )}
         </div>
       </div>
+
+      <div className="md:flex hidden overflow-x-auto items-center w-auto scrollbar-hide gap-x-2">
+        {movies?.map((movie) => (
+          <NavLink
+            key={movie.id}
+            to={"/movies/" + movie.id}
+            className="w-1/5 flex-none"
+          >
+            <img
+              src={getImageUrl(300, movie.poster_path)}
+              className="object-cover object-center rounded-sm w-full"
+              alt="img"
+            />
+          </NavLink>
+        ))}
+      </div>
+
       <div className="flex flex-col items-center justify-center w-full py-2">
         <div className="flex items-center justify-center gap-8">
           <div className="flex flex-col items-center gap-1">

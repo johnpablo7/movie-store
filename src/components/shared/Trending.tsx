@@ -15,7 +15,7 @@ export const Trending = () => {
   // console.log(movies);
 
   return (
-    <div className="pl-4 pt-4">
+    <div className="pl-4 pt-4 md:hidden">
       <div className="flex items-center justify-between mb-2">
         {/* API trending */}
         <h3 className="text-[#EBEBF5] font-bold">Trending</h3>
@@ -35,7 +35,7 @@ export const Trending = () => {
           >
             <img
               src={getImageUrl(300, movie.poster_path)}
-              className="object-cover object-center rounded-sm w-full h-44"
+              className="object-cover object-center rounded-sm w-full"
               alt="img"
             />
           </NavLink>

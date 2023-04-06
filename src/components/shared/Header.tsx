@@ -1,11 +1,12 @@
 import { NavLink } from "react-router-dom";
 import { useScroll } from "../../hooks/scroll";
-import { RiSearchLine } from "react-icons/ri";
+import { RiSearchLine, RiArrowDownSFill } from "react-icons/ri";
 import { FaUser } from "react-icons/fa";
 import { GoTriangleDown } from "react-icons/go";
 import clsx from "clsx";
 import { useAtom } from "jotai";
 import { mobileMenuAtom } from "../../atoms/sidebar";
+import { navbar } from "../../data/navbar";
 
 export const Header = () => {
   return (
@@ -17,21 +18,43 @@ export const Header = () => {
 };
 
 const HeaderMain = () => {
+  const { directionY } = useScroll();
+
   return (
-    <div className="bg-black bg-opacity-70 w-full flex justify-between py-2 px-4">
-      <NavLink to="/">
-        <img src="/images/logo.png" className="w-8 h-8" alt="logo" />
-      </NavLink>
-      <div className="flex items-center gap-6">
+    <nav
+      className={clsx(
+        "bg-black bg-opacity-70 w-full flex justify-between py-2 px-4 md:py-5 md:px-12 transition",
+        directionY === "bottom" ? "opacity-0" : "opacity-80"
+      )}
+    >
+      <div className="flex items-center gap-8">
+        <NavLink to="/">
+          <img src="/images/logo.png" className="w-8 h-8" alt="logo" />
+        </NavLink>
+        <ul className="md:flex items-center justify-center gap-2 hidden">
+          {navbar.map((link) => (
+            <NavLink
+              key={link.id}
+              to={link.path}
+              className="text-white opacity-50 hover:text-white hover:opacity-100 transition text-sm p-2"
+            >
+              <li>{link.name}</li>
+            </NavLink>
+          ))}
+        </ul>
+      </div>
+
+      <div className="flex items-center gap-4">
         <NavLink to="/search">
-          <RiSearchLine className="text-[#EBEBF5] opacity-60 text-2xl" />
+          <RiSearchLine className="text-white opacity-50 hover:text-white hover:opacity-100 transition text-2xl" />
         </NavLink>
 
-        <NavLink to="/user">
-          <FaUser className="text-[#EBEBF5] opacity-60 text-2xl" />
+        <NavLink to="/user" className="flex items-center gap-1">
+          <FaUser className="text-white opacity-50 hover:text-white hover:opacity-100 transition text-2xl" />
+          <RiArrowDownSFill className="text-2xl text-white opacity-50 hover:text-white hover:opacity-100 transition" />
         </NavLink>
       </div>
-    </div>
+    </nav>
   );
 };
 
@@ -46,7 +69,7 @@ const HeaderMenu = () => {
   return (
     <nav
       className={clsx(
-        "bg-black bg-opacity-70 w-full flex items-center justify-center pt-1 pb-2 transition",
+        "bg-black bg-opacity-70 w-full flex items-center justify-center pt-1 pb-2 transition md:hidden",
         directionY === "bottom" ? "opacity-0" : "opacity-80"
       )}
     >
