@@ -15,15 +15,15 @@ export const Movies = () => {
 
   return (
     <div className="flex flex-col w-full min-h-screen bg-gradient-to-r from-gray-900 to-gray-800 p-4">
-      <div className="flex items-center gap-4 pb-2">
+      <div className="flex items-center gap-4 pb-2 md:px-8 md:py-2">
         <NavLink to="/" className="top-0 left-0 py-4">
           <RiArrowLeftLine className="text-2xl text-white" />
         </NavLink>
 
-        <h1 className="text-white text-2xl">All The Movies and Series</h1>
+        <h1 className="text-white text-2xl">All The Movies</h1>
       </div>
 
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-2 md:grid-cols-6 gap-4 md:px-8 md:py-2">
         {movies?.map((movie) => (
           <NavLink
             key={movie.id}

@@ -36,7 +36,7 @@ const HeaderMain = () => {
             <NavLink
               key={link.id}
               to={link.path}
-              className="text-white opacity-50 hover:text-white hover:opacity-100 transition text-sm p-2"
+              className="hover:text-white hover:opacity-70 text-white opacity-100 transition p-2"
             >
               <li>{link.name}</li>
             </NavLink>
@@ -46,12 +46,12 @@ const HeaderMain = () => {
 
       <div className="flex items-center gap-4">
         <NavLink to="/search">
-          <RiSearchLine className="text-white opacity-50 hover:text-white hover:opacity-100 transition text-2xl" />
+          <RiSearchLine className="hover:text-white hover:opacity-70 text-white opacity-100 transition text-2xl" />
         </NavLink>
 
         <NavLink to="/user" className="flex items-center gap-1">
-          <FaUser className="text-white opacity-50 hover:text-white hover:opacity-100 transition text-2xl" />
-          <RiArrowDownSFill className="text-2xl text-white opacity-50 hover:text-white hover:opacity-100 transition" />
+          <FaUser className="hover:text-white hover:opacity-70 text-white opacity-100 transition text-2xl" />
+          <RiArrowDownSFill className="hover:text-white hover:opacity-70 text-white opacity-100 transition" />
         </NavLink>
       </div>
     </nav>
