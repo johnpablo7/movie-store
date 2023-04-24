@@ -58,8 +58,9 @@ const MovieImage: FC<TMovieImageProps> = ({ movie }) => {
     <div className="relative flex items-center justify-center md:justify-end md:p-8">
       <img
         src={getImageUrl(500, movie.poster_path)}
-        alt="logo"
+        loading="lazy"
         className="object-cover rounded-b-2xl h-full"
+        alt="img"
       />
 
       <div className="absolute top-0 md:top-5 right-0 md:right-[560px] m-3 p-2 bg-gradient-to-r from-gray-900 to-gray-700 opacity-80 rounded-full">
@@ -84,7 +85,12 @@ const MovieDetails: FC<TMovieDetailsProps> = ({ movie }) => {
             {movie.original_title}
           </h1>
           <div className="flex items-center gap-2 pt-2">
-            <img src="/images/star.png" alt="star" className="w-4 h-4" />
+            <img
+              src="/images/star.png"
+              loading="lazy"
+              className="w-4 h-4"
+              alt="img"
+            />
             <p className="text-white font-semibold">{movie.vote_average}</p>
           </div>
         </div>
@@ -148,6 +154,7 @@ const TRelated: FC<TRelatedProps> = ({ related }) => {
             <img
               src={getImageUrl(300, movie.poster_path)}
               className="object-cover object-center rounded-sm w-full"
+              loading="lazy"
               alt="img"
             />
           </NavLink>

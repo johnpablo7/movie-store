@@ -34,6 +34,7 @@ export const TvShows = () => {
             <img
               src={getImageUrl(300, show.poster_path)}
               className="object-cover object-center w-full h-full rounded-md"
+              loading="lazy"
               alt="img"
             />
           </NavLink>

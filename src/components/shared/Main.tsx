@@ -16,7 +16,7 @@ export const Main = () => {
     getTrendingMovies().then((movies) => {
       const randomIndex = Math.floor(Math.random() * movies.length);
       const movie = movies[randomIndex];
-      console.log(randomIndex);
+      // console.log(randomIndex);
 
       setMovie(movie);
     });
@@ -31,8 +31,9 @@ export const Main = () => {
           {movie && (
             <img
               src={getImageUrl(500, movie?.poster_path)}
-              alt="img"
               className="w-full h-full object-cover"
+              loading="lazy"
+              alt="img"
             />
           )}
         </div>
@@ -48,6 +49,7 @@ export const Main = () => {
             <img
               src={getImageUrl(300, movie.poster_path)}
               className="object-cover object-center rounded-sm w-full"
+              loading="lazy"
               alt="img"
             />
           </NavLink>

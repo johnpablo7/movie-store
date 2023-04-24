@@ -26,7 +26,7 @@ export const Trending = () => {
       </div>
 
       {/* Tendencias */}
-      <div className="flex overflow-x-auto items-center w-auto scrollbar-hide gap-x-2">
+      <div className="flex overflow-x-auto items-center w-auto scrollbar-hidden gap-x-2">
         {movies?.map((movie) => (
           <NavLink
             key={movie.id}
@@ -36,6 +36,7 @@ export const Trending = () => {
             <img
               src={getImageUrl(300, movie.poster_path)}
               className="object-cover object-center rounded-sm w-full"
+              loading="lazy"
               alt="img"
             />
           </NavLink>

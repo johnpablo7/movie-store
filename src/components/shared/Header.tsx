@@ -29,7 +29,12 @@ const HeaderMain = () => {
     >
       <div className="flex items-center gap-8">
         <NavLink to="/">
-          <img src="/images/logo.png" className="w-8 h-8" alt="logo" />
+          <img
+            src="/images/logo.png"
+            className="w-8 h-8"
+            loading="lazy"
+            alt="img"
+          />
         </NavLink>
         <ul className="md:flex items-center justify-center gap-2 hidden">
           {navbar.map((link) => (

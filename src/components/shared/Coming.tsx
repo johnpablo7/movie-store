@@ -28,6 +28,7 @@ export const Coming = () => {
             <img
               src={getImageUrl(300, movie.poster_path)}
               className="object-cover object-center rounded-sm w-full"
+              loading="lazy"
               alt="img"
             />
           </NavLink>

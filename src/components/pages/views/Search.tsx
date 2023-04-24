@@ -43,6 +43,7 @@ export const Search = () => {
             <img
               src={getImageUrl(300, movie.poster_path)}
               className="object-cover object-center w-full h-full rounded-md"
+              loading="lazy"
               alt="img"
             />
           </NavLink>
