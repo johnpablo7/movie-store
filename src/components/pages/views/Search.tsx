@@ -19,18 +19,16 @@ export const Search = () => {
         <RiArrowLeftLine className="text-2xl md:text-4xl text-white" />
       </NavLink>
 
-      <form onSubmit={onSubmit} className="relative md:px-4">
+      <form onSubmit={onSubmit} className="relative md:px-4 flex md:block">
         <RiMovieLine className="absolute text-[#EBEBF5] opacity-60 top-3 left-4 md:left-8 text-2xl" />
+        <RiSearchLine className="absolute text-[#EBEBF5] right-4 opacity-60 top-3 md:left-[360px] text-2xl" />
         <input
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           type="text"
-          className="bg-[#100d0d] outline-none w-full py-3 pl-12 pr-14 text-[#EBEBF5] text-lg md:rounded-2xl md:w-[410px]"
+          className="bg-[#100D0D] flex-grow outline-none py-3 pl-12 pr-14 text-[#EBEBF5] text-lg md:rounded-2xl md:w-[380px]"
           placeholder="Buscar una serie, una peli, un gén..."
         />
-        <button>
-          <RiSearchLine className="absolute text-[#EBEBF5] opacity-60 top-3 left-96 text-2xl" />
-        </button>
       </form>
 
       <div className="grid grid-cols-2 md:grid-cols-6 gap-4 p-4">
