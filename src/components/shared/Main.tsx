@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { getImageUrl, getTrendingMovies } from "../../api/movies";
 import { TMovieSmall } from "../../types/movie";
 import { NavLink } from "react-router-dom";
+import { AllMovies } from "./AllMovies";
 
 export const Main = () => {
   const [movies, setMovies] = useState<TMovieSmall[]>();
@@ -60,7 +61,7 @@ export const Main = () => {
         <div className="flex items-center justify-center gap-8">
           <div className="flex flex-col items-center gap-1">
             <RiAddFill className="text-white text-2xl" />
-            <p className="text-white text-xs">My list</p>
+            <p className="text-white text-xs">Mi lista</p>
           </div>
           <button className="flex items-center gap-1 bg-[#EBEBF5] px-6 py-2 rounded-sm text-xs mt-2">
             <RiPlayFill className="text-lg" />
@@ -68,13 +69,14 @@ export const Main = () => {
           </button>
           <div className="flex flex-col items-center gap-1">
             <RiInformationLine className="text-white text-2xl" />
-            <p className="text-white text-xs">information</p>
+            <p className="text-white text-xs">información</p>
           </div>
         </div>
       </div>
 
       <Trending />
       <Coming />
+      <AllMovies />
       <CategoryList />
     </main>
   );

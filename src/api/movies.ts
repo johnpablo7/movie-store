@@ -33,6 +33,17 @@ export async function getTrendingMovies() {
   return movies;
 }
 
+// Paginación y Scroll infinito
+export async function getPaginatedTrendingMovies() {
+  const { data } = await api("trending/movie/day", {
+    params: {
+      page: 2,
+    },
+  });
+  const movies = data.results as TMovieSmall[];
+  return movies;
+}
+
 export async function getRelatedMoviesById(id: string) {
   const { data } = await api(`movie/${id}/recommendations`);
   const relatedMovies = data.results as TMovieSmall[];

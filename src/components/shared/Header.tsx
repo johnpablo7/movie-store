@@ -23,7 +23,7 @@ const HeaderMain = () => {
   return (
     <nav
       className={clsx(
-        "bg-black bg-opacity-70 w-full flex justify-between py-2 px-4 md:py-5 md:px-12 transition",
+        "bg-black bg-opacity-70 w-full flex justify-between py-3 px-4 md:py-5 md:px-12 transition",
         directionY === "bottom" ? "opacity-0" : "opacity-80"
       )}
     >
@@ -74,7 +74,7 @@ const HeaderMenu = () => {
   return (
     <nav
       className={clsx(
-        "bg-black bg-opacity-70 w-full flex items-center justify-center pt-1 pb-2 transition md:hidden",
+        "bg-black bg-opacity-70 w-full flex items-center justify-center py-2 transition md:hidden",
         directionY === "bottom" ? "opacity-0" : "opacity-80"
       )}
     >

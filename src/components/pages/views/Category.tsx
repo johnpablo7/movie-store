@@ -50,6 +50,12 @@ export const Category = () => {
           </NavLink>
         ))}
       </div>
+
+      <div className="flex items-center justify-center mt-2">
+        <button className="rounded-md py-2 px-8 bg-cyan-600 text-white font-semibold">
+          Siguiente Página
+        </button>
+      </div>
     </div>
   );
 };

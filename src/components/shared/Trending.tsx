@@ -18,7 +18,7 @@ export const Trending = () => {
     <div className="pl-4 pt-4 md:hidden">
       <div className="flex items-center justify-between mb-2">
         {/* API trending */}
-        <h3 className="text-[#EBEBF5] font-bold">Trending</h3>
+        <h3 className="text-[#EBEBF5] font-bold">Tendencias</h3>
         <div className="items-center hidden md:hidden lg:flex gap-4">
           <LeftArrowIcon className="text-[#EBEBF5] text-opacity-60 hover:text-[#EBEBF5] cursor-pointer fill-current transition-colors" />
           <RightArrowIcon className="text-[#EBEBF5] text-opacity-60 hover:text-[#EBEBF5] cursor-pointer fill-current transition-colors" />
