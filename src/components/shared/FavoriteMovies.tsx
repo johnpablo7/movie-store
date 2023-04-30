@@ -4,7 +4,7 @@ import { CgHeart } from "react-icons/cg";
 import { getImageUrl, getUpComingMovies } from "../../api/movies";
 import { NavLink } from "react-router-dom";
 
-export const Coming = () => {
+export const FavoriteMovies = () => {
   const [movies, setMovies] = useState<TMovieSmall[]>();
 
   useEffect(() => {
@@ -16,7 +16,7 @@ export const Coming = () => {
   return (
     <div className="pl-4 md:pl-12">
       {/* API upcoming */}
-      <h3 className="text-[#EBEBF5] font-bold mb-2">Muy Pronto</h3>
+      <h3 className="text-[#EBEBF5] font-bold mb-2">Favoritos</h3>
 
       {/* Coming */}
       <div className="flex overflow-x-auto items-center w-auto scrollbar-hide gap-x-2 md:gap-x-4">

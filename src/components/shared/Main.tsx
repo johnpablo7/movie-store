@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import { getImageUrl, getTrendingMovies } from "../../api/movies";
 import { TMovieSmall } from "../../types/movie";
 import { NavLink } from "react-router-dom";
-import { AllMovies } from "./AllMovies";
+import { FavoriteMovies } from "./FavoriteMovies";
 
 export const Main = () => {
   const [movies, setMovies] = useState<TMovieSmall[]>();
@@ -76,7 +76,7 @@ export const Main = () => {
 
       <Trending />
       <Coming />
-      <AllMovies />
+      <FavoriteMovies />
       <CategoryList />
     </main>
   );

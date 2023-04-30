@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { getTrendingMovies, getImageUrl } from "../../api/movies";
 import { TMovieSmall } from "../../types/movie";
+import { CgHeart } from "react-icons/cg";
 import LeftArrowIcon from "../../Svg/LeftArrowIcon";
 import RightArrowIcon from "../../Svg/RightArrowIcon";
 
@@ -39,6 +40,9 @@ export const Trending = () => {
               loading="lazy"
               alt="img"
             />
+            <button className="z-40 rounded-full bg-white/40 text-red-600 text-2xl p-[3px] top-1 right-1">
+              <CgHeart />
+            </button>
           </NavLink>
         ))}
       </div>
